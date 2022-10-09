@@ -1,0 +1,58 @@
+{
+  "Start": [
+    {
+      "file": "SL-问候.motion3.json",
+      "sound": "SSLR-1.wav"
+    }
+  ],
+  "Shake": [
+    {
+      "file": "SL-黑脸.motion3.json"
+    },
+    {
+      "file": "SL-烦恼.motion3.json",
+      "sound": "SL-烦恼.wav",
+      "pre_mtn": " "
+    }
+  ],
+  "Tap观点": [
+    {
+      "file": "SL-观点.motion3.json",
+      "sound": "SSLR-2.wav"
+    }
+  ],
+  "Tap微笑": [
+    {
+      "file": "SL-微笑.motion3.json"
+    }
+  ],
+  "Tap宠物": [
+    {
+      "file": "SL-宠物.motion3.json",
+      "sound": "SSLR-3.wav"
+    }
+  ],
+  "Tap归零": [
+    {
+      "file": "SL-归零.motion3.json"
+    }
+  ],
+  "Tap烦恼": [
+    {
+      "file": "SL-烦恼.motion3.json",
+      "sound": "SL-烦恼.wav"
+    }
+  ],
+  "Tap忘记": [
+    {
+      "file": "SL-忘记.motion3.json",
+      "sound": "SL—忘记.wav"
+    }
+  ],
+  "Tap问候": [
+    {
+      "file": "SL-问候.motion3.json",
+      "sound": "SSLR-1.wav"
+    }
+  ]
+}

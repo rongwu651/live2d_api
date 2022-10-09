@@ -1,0 +1,176 @@
+{
+  "Version": 3,
+  "Type": 0,
+  "Bounds": {
+    "Width": 9.0,
+    "Height": 9.0,
+    "CenterX": 0.0,
+    "CenterY": 1.0
+  },
+  "FileReferences": {
+    "Moc": "SLLR3.moc3",
+    "Textures": [
+      "textures/texture_00.png"
+    ],
+    "Physics": "SLLR3.physics3.json",
+    "PhysicsV2": {
+      "File": "SLLR3.physics3.json"
+    },
+    "Motions": {
+      "Start": [
+        {
+          "File": "SL-问候.motion3.json",
+          "Sound": "SSLR-1.wav"
+        }
+      ],
+      "Shake": [
+        {
+          "File": "SL-黑脸.motion3.json"
+        },
+        {
+          "File": "SL-烦恼.motion3.json",
+          "Sound": "SL-烦恼.wav",
+          "PreMtn": " "
+        }
+      ],
+      "Tap观点": [
+        {
+          "File": "SL-观点.motion3.json",
+          "Sound": "SSLR-2.wav"
+        }
+      ],
+      "Tap微笑": [
+        {
+          "File": "SL-微笑.motion3.json"
+        }
+      ],
+      "Tap宠物": [
+        {
+          "File": "SL-宠物.motion3.json",
+          "Sound": "SSLR-3.wav"
+        }
+      ],
+      "Tap归零": [
+        {
+          "File": "SL-归零.motion3.json"
+        }
+      ],
+      "Tap忘记": [
+        {
+          "File": "SL-忘记.motion3.json",
+          "Sound": "SL—忘记.wav"
+        }
+      ],
+      "Tap烦恼": [
+        {
+          "File": "SL-烦恼.motion3.json",
+          "Sound": "SL-烦恼.wav"
+        }
+      ],
+      "Tap问候": [
+        {
+          "File": "SL-问候.motion3.json",
+          "Sound": "SSLR-1.wav"
+        }
+      ]
+    }
+  },
+  "Controllers": {
+    "ParamHit": {},
+    "ParamLoop": {},
+    "KeyTrigger": {},
+    "ParamTrigger": {},
+    "AreaTrigger": {},
+    "HandTrigger": {},
+    "EyeBlink": {
+      "MinInterval": 500,
+      "MaxInterval": 6000,
+      "Items": [
+        {
+          "Id": "ParamEyeLOpen",
+          "Min": 0.0,
+          "Max": 1.0,
+          "BlendMode": 2,
+          "Input": 0
+        },
+        {
+          "Id": "ParamEyeROpen",
+          "Min": 0.0,
+          "Max": 1.0,
+          "BlendMode": 2,
+          "Input": 0
+        }
+      ],
+      "Enabled": true
+    },
+    "LipSync": {
+      "Gain": 5.0,
+      "Items": [
+        {
+          "Id": "ParamMouthOpenY",
+          "Min": 0.0,
+          "Max": 1.0,
+          "Input": 0
+        }
+      ]
+    },
+    "MouseTracking": {
+      "SmoothTime": 0.15,
+      "Enabled": true
+    },
+    "AutoBreath": {
+      "Enabled": true
+    },
+    "ExtraMotion": {
+      "Enabled": true
+    },
+    "Accelerometer": {
+      "Enabled": true
+    },
+    "Microphone": {},
+    "Transform": {},
+    "FaceTracking": {
+      "Enabled": true
+    },
+    "HandTracking": {},
+    "ParamValue": {},
+    "PartOpacity": {},
+    "ArtmeshOpacity": {},
+    "ArtmeshColor": {},
+    "ArtmeshCulling": {
+      "DefaultMode": 0
+    },
+    "IntimacySystem": {}
+  },
+  "HitAreas": [
+    {
+      "Name": "观点",
+      "Id": "ArtMesh12"
+    },
+    {
+      "Name": "微笑",
+      "Id": "ArtMesh74"
+    },
+    {
+      "Name": "宠物",
+      "Id": "ArtMesh73"
+    },
+    {
+      "Name": "归零",
+      "Id": "ArtMesh58"
+    },
+    {
+      "Name": "忘记",
+      "Id": "ArtMesh59"
+    },
+    {
+      "Name": "烦恼",
+      "Id": "ArtMesh61"
+    },
+    {
+      "Name": "问候",
+      "Id": "ArtMesh65"
+    }
+  ],
+  "Options": {}
+}
