@@ -10,10 +10,10 @@
     "width": 1.9
   },
   "hit_areas_custom": {
-    "head_x": [-0.8, 1],
-    "head_y": [-0.45, 1],
-    "body_x": [-0.75, 1],
-    "body_y": [-0.5, 1]
+    "head_x": [-0.6, 0.1],
+    "head_y": [0, 0.6],
+    "body_x": [-0.6, 0],
+    "body_y": [-0.9, 0]
   },
   "motions": {
     "idle": [{
