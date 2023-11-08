@@ -1,5 +1,5 @@
 {
-  "name": "akilar-live2dapi",
+  "name": "lrplrplrp-live2dapi",
   "version": "1.0.6",
   "description": "看板娘模型资源文件",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Akilarlxh/live2d_api.git"
+    "url": "git+https://github.com/lrplrplrp/live2d_api.git"
   },
   "keywords": [
     "live2d",
@@ -19,7 +19,7 @@
   "author": "akilarlxh",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Akilarlxh/live2d_api/issues"
+    "url": "https://github.com/lrplrplrp/live2d_api/issues"
   },
-  "homepage": "https://github.com/Akilarlxh/live2d_api#readme"
+  "homepage": "https://github.com/lrplrplrp/live2d_api#readme"
 }
