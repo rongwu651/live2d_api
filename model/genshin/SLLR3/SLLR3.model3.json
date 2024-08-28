@@ -8,7 +8,7 @@
     "CenterY": 1.0
   },
   "FileReferences": {
-    "model": "SLLR3.moc3",
+    "Moc": "SLLR3.moc3",
     "Textures": [
       "textures/texture_00.png"
     ],
