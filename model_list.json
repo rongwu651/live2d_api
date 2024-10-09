@@ -16,7 +16,11 @@
     },
     {
       "url":[
-        "https://raw.bgithub.xyz/lrplrplrp/live2d_api/master/model/HyperdimensionNeptunia/nepnep/index.json"
+        "./model/HyperdimensionNeptunia/nepnep/index.json",
+        "./model/HyperdimensionNeptunia/nepswim/index.json",
+        "./model/HyperdimensionNeptunia/neptune_classic/index.json",
+        "./model/HyperdimensionNeptunia/neptune_santa/index.json",
+        "./model/HyperdimensionNeptunia/nepmaid/index.json"
       ],
       "config":{
         "x":0,
