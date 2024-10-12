@@ -2,7 +2,7 @@
 
 [Live2D 看板娘插件](https://github.com/lrplrplrp/live2d) 上使用的后端模型
 
-自(https://github.com/Akilarlxh/live2d_api)修改而来，去掉了PHP API调用，修改了配置结构
+自[https://github.com/Akilarlxh/live2d_api](https://github.com/Akilarlxh/live2d_api)修改而来，去掉了PHP API调用，修改了配置结构
 
 ## 使用
 
@@ -29,8 +29,13 @@
   ]
 }
 ```
-
->   waifu-tips.json
+-   模型文本文件配置
+-   由于文件过长，这里只简单解释下节点分类
+-   [messages-模型的特殊情况下的交互](./waifu-tips.json#L2)
+-   [mouseover-鼠标悬浮在某些元素上时的交互](./waifu-tips.json#L22)
+-   [click-鼠标点击某些元素时的交互](./waifu-tips.json#L313)
+-   [timer-满足特定时间时的交互](./waifu-tips.json#L329)
+>   waifu-tips-XXX.json
 -   为了交互更生动，重新设计了waifu-tips.json的结构，可以在交互的时候触发动作和表情，并为动作添加了文本，但因为每个模型的动作和表情命名并不一样，所以需要单独配置一个文件
 -   [waifu-tips-BCSZ.json](./model/genshin/BCSZ1.1/waifu-tips-BCSZ.json#L21)
 ```json
