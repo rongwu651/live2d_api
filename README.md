@@ -1,171 +1,53 @@
-# Live2D API
+# Live2D MODEL
 
-Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端 API
+[Live2D 看板娘插件](https://github.com/lrplrplrp/live2d) 上使用的后端模型
 
-### 特性
-
-- 原生 PHP 开发，无需伪静态，开箱即用
-- 支持 模型、皮肤 的 顺序切换 和 随机切换
-- 支持 单模型 单皮肤 切换、多组皮肤 递归穷举
-- 支持 同分组 多个模型 或 多个路径 的 加载切换
+自(https://github.com/Akilarlxh/live2d_api)修改而来，去掉了PHP API调用，修改了配置结构
 
 ## 使用
 
-### 环境要求
-- PHP 版本 >= 5.2
-- 依赖 PHP 扩展：json
-
-### 目录结构
-
-```shell
-│  model_list.json              // 模型列表
-│
-├─model                         // 模型路径
-│  └─GroupName                  // 模组分组
-│      └─ModelName              // 模型名称
-│
-├─add                           // 更新皮肤列表
-├─get                           // 获取模型配置
-├─rand                          // 随机切换模型
-├─rand_textures                 // 随机切换皮肤
-├─switch                        // 顺序切换模型
-├─switch_textures               // 顺序切换皮肤
-└─tools
-        modelList.php           // 列出模型列表
-        modelTextures.php       // 列出皮肤列表
-        name-to-lower.php       // 文件名格式化
-```
-
-### 添加模型
-
-- 单模型 单皮肤 切换
-    - 单次加载只输出一个皮肤
-    - 皮肤放在 `textures` 文件夹，自动识别
-
-```shell
-│  index.json
-│  model.moc
-│  textures.cache       // 皮肤列表缓存，自动生成
-│
-├─motions
-│      idle_01.mtn
-│      idle_02.mtn
-│      idle_03.mtn
-│
-└─textures
-        default-costume.png
-        school-costume.png
-        winter-costume.png
-```
-
-- 单模型 多组皮肤 递归穷举
-    - 多组皮肤 组合模型、穷举组合
-    - 皮肤文件夹按 `texture_XX` 命名
-    - 添加 `textures_order.json` 列出组合
-```shell
-│  index.json
-│  model.moc
-│  textures.cache
-│  textures_order.json
-│
-├─motions
-│      idle_01.mtn
-│      idle_02.mtn
-│      idle_03.mtn
-│
-├─texture_00
-│      00.png
-│
-├─texture_01
-│      00.png
-│      01.png
-│      02.png
-│
-├─texture_02
-│      00.png
-│      01.png
-│      02.png
-│
-└─texture_03
-       00.png
-       01.png
-```
-
-textures_order.json
-
-```json
-[
-    ["texture_00"],
-    ["texture_01","texture_02"],
-    ["texture_03"]
-]
-```
-
-textures.cache
-
-```json
-[
-    ["texture_00/00.png","texture_01/00.png","texture_02/00.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/00.png","texture_02/00.png","texture_03/01.png"],
-    ["texture_00/00.png","texture_01/01.png","texture_02/01.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/01.png","texture_02/01.png","texture_03/01.png"],
-    ["texture_00/00.png","texture_01/02.png","texture_02/02.png","texture_03/00.png"],
-    ["texture_00/00.png","texture_01/02.png","texture_02/02.png","texture_03/01.png"]
-]
-```
-
-- 同分组 多个模型 或 多个路径 切换
-    - 修改 `model_list.json` 添加多个模型
-
-```shell
-│
-├─model
-│  ├─Group1
-│  │  ├─Model1
-│  │  │      index.json
-│  │  │
-│  │  └─Model2
-│  │          index.json
-│  │
-│  ├─Group2
-│  │  └─Model1
-│  │          index.json
-│  │
-│  └─GroupName
-│     └─ModelName
-│          │  index.json
-│          │  model.moc
-│          │
-│          ├─motions
-│          └─textures
-│
-```
-
-model_list.json
+>   model_list.json
 ```json
 {
-    "models": [
-        "GroupName/ModelName",
-        [
-            "Group1/Model1",
-            "Group1/Model2",
-            "Group2/Model1"
-        ]
-    ],
-    "messages": [
-        "Example 1",
-        "Example 2"
-    ]
+  "models": [
+    {
+      "url":"https://raw.bgithub.xyz/lrplrplrp/live2d_api/master/model/genshin/BCSZ1.1/BCSZ1.1.model3.json",
+      "url说明":"模型的结构文件,2.0及以下为 model.json 或 index.json ，3.0以上为 model3.json 结尾",
+      "tipsUrl":"./waifu-tips-BCSZ.json",
+      "tipsUrl说明":"单模型文本文件地址，若为空，则使用load.js中配置的地址。",
+      "config":{
+        "x":0,
+        "x说明":"模型的横轴偏移，默认为0",
+        "y":0,
+        "y说明":"模型的纵轴偏移，默认为0",
+        "scaleX":1.8,
+        "scaleX说明":"模型的横轴缩放，默认为1",
+        "scaleY":1.8,
+        "scaleY说明":"模型的纵轴缩放，默认为1"
+      }
+    }
+  ]
 }
 ```
 
-### 接口用法
-- `/add/` - 检测 新增皮肤 并更新 缓存列表
-- `/get/?id=1-23` 获取 分组 1 的 第 23 号 皮肤
-- `/rand/?id=1` 根据 上一分组 随机切换
-- `/switch/?id=1` 根据 上一分组 顺序切换
-- `/rand_textures/?id=1-23` 根据 上一皮肤 随机切换 同分组其他皮肤
-- `/switch_textures/?id=1-23` 根据 上一皮肤 顺序切换 同分组其他皮肤
+>   waifu-tips.json
+-   为了交互更生动，重新设计了waifu-tips.json的结构，可以在交互的时候触发动作和表情，并为动作添加了文本，但因为每个模型的动作和表情命名并不一样，所以需要单独配置一个文件
+-   [waifu-tips-BCSZ.json](./model/genshin/BCSZ1.1/waifu-tips-BCSZ.json#L21)
+```json
+"selector": "#waifu-tool .fa-paper-plane",
+		"interaction":{
+			"text": ["要不要来玩飞机大战？", "这个按钮上写着「不要点击」。", "怎么，你想来和我玩个游戏？", "听说这样可以蹦迪！"],
+        	"motion":"Start"
+		}
+```
+-   [waifu-tips-BCSZ.json](./model/genshin/BCSZ1.1/waifu-tips-BCSZ.json#L30)
+```json
+"motion":{
+		"Tap早上好":"早，嗯?怎么一副无精打采的样子，没有睡好吗?哎呀，昨晚是去做什么坏事了么?",
+		"Tap中午好":"嗯~伤脑筋，中午吃些什么呢?油豆腐吃腻了，想吃点清淡的。话说好久没见到社奉行家的小姑娘了，我们不如就去吃她做的点心吧。",
+		"Tap晚上好":"今夜的月光如此清亮，不做些什么真是浪费。随我一同去月下漫步吧，不许拒绝。"
+	}
+```
 
 ## 版权声明
 
@@ -173,4 +55,4 @@ model_list.json
 
 **API 内所有模型 版权均属于原作者，仅供研究学习，不得用于商业用途**  
 
-MIT © FGHRSH
+MIT © LRPLRPLRP
