@@ -29,7 +29,13 @@
         "scaleY":1.5
       }
     },{
-      "url":"./model/platelets/index.json"
+      "url":"./model/platelets/index.json",
+      "config":{
+        "x":100,
+        "y":0,
+        "scaleX":1,
+        "scaleY":1.5
+      }
     },{
       "url":["./model/22/default/index.json",
         "./model/22/cba-normal/index.json",
