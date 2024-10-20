@@ -7,15 +7,15 @@
 		"copy":{"text":"你都复制了些什么呀，转载要记得加上出处哦！"},
 		"focus":{"text":["哇，你终于回来了～", "是想我了吗～"]},
 		"home":{"text":"这里是主页"},
-		"location":{"text":"欢迎阅读<span>「${document.title.split('-')[0]}」</span>"},
+		"location":{"text":"欢迎阅读<span>「{title}」</span>"},
 		"domain":{
 			"baidu":{"text":"Hello！来自 百度搜索 的朋友<br>你是搜索 <span>${referrer.search.split('&wd=')[1].split('&')[0]}</span> 找到的我吗？"},
 			"so":{"text":"Hello！来自 360搜索 的朋友<br>你是搜索 <span>${referrer.search.split('&q=')[1].split('&')[0]}</span> 找到的我吗？"},
-			"google":{"text":"Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「${document.title.split(' - ')[0]}」</span>"}
+			"google":{"text":"Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「{title}」</span>"}
 			
 		},
 		"domain_other":{"text":"Hello！来自 <span>${referrer.hostname}</span> 的朋友"},
-		"path_other":{"text":"欢迎阅读<span>「${document.title.split(' - ')[0]}」</span>"},
+		"path_other":{"text":"欢迎阅读<span>「{title}」</span>"},
 		"newClothes":{"text":"我的新衣服好看嘛？"},
 		"notNewClothes":{"text":"我还没有其他衣服呢！"}
 	},
@@ -151,6 +151,11 @@
 		}
 	}, {
 		"selector": "a[href^='/tags/']",
+		"interaction":{
+			"text": ["要去看看 <span>{text}</span> 标签么？", "点它可以查看此标签下的所有文章哟！"]
+		}
+	}, {
+		"selector": "a",
 		"interaction":{
 			"text": ["要去看看 <span>{text}</span> 标签么？", "点它可以查看此标签下的所有文章哟！"]
 		}
