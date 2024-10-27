@@ -14,7 +14,7 @@
 			"google":{"text":"Hello！来自 谷歌搜索 的朋友<br>欢迎阅读<span>「{title}」</span>"}
 			
 		},
-		"domain_other":{"text":"Hello！来自 <span>${referrer.hostname}</span> 的朋友"},
+		"domain_other":{"text":"Hello！来自 <span>{hostname}</span> 的朋友"},
 		"path_other":{"text":"欢迎阅读<span>「{title}」</span>"},
 		"newClothes":{"text":"我的新衣服好看嘛？"},
 		"notNewClothes":{"text":"我还没有其他衣服呢！"}
